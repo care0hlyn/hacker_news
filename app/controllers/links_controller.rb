@@ -11,7 +11,7 @@ class LinksController < ApplicationController
   def create
     @link = Link.new(params[:link])
     if @link.save
-      flash[:notice] = "#{link.description} has been created."
+      flash[:notice] = "#{@link.description} has been created."
       redirect_to links_path
     else
       render 'new'

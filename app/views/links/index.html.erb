@@ -1,3 +1,5 @@
+<% content_for(:title, "Links | Hacker News") %>
+
 <div class="row">
   <div class="col-md-6 col-md-offset-3 site">
     <div class="site-title">
@@ -7,10 +9,14 @@
 <div class="post">
   <ul>
     <% @links.each do |link| %>
-      <li><%= link.description %></li>
+      <li><a href="http://<%= link.link %>"><%= link.description %></a></li>
       <% end %>
   </ul>
 </div>
 
-  </div>
+<div class="post-centered">
+  <p><a href="links/new">+ Add Link</a></p>
 </div>
+
+ </div><!-- dive for col -->
+</div><!-- div for row -->
