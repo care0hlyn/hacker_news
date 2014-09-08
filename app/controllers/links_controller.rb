@@ -18,4 +18,28 @@ class LinksController < ApplicationController
     end
   end
 
+  def show
+    @link = Link.find(params[:id])
+  end
+
+  def edit
+    @link = Link.find(params[:id])
+  end
+
+  def update
+    @link = Link.find(params[:id])
+    if @link.update(params[:link])
+      flash[:notice] = "#{@link.description} has been updated."
+      redirect_to links_path
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @link = Link.find(params[:id])
+    @link.destroy
+    flash[:notice] = "Link has been deleted."
+    redirect_to links_path
+  end
 end
