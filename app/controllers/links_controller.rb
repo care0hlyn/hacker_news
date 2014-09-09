@@ -2,7 +2,6 @@ class LinksController < ApplicationController
 
   def index
     @links = Link.all
-    # blah
     @vote = Vote.new
   end
 
@@ -22,6 +21,8 @@ class LinksController < ApplicationController
 
   def show
     @link = Link.find(params[:id])
+    @comment = Comment.new
+    @comments = @link.comments.all
   end
 
   def edit

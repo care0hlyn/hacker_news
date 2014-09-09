@@ -7,12 +7,39 @@
     </div>
 
 
-
 <div class="post">
-  <ol>
+<div class="detailBox">
+    <div class="titleBox">
+      <label>Comments for <%= @link.description %>:</label>
+    </div>
+    <div class="actionBox">
+        <ul class="commentList">
+          <% @comments.each do |comment| %>
+            <li>
+                <div class="commentText">
+                    <p class=""><%= comment.input %></p> <span class="date sub-text"><%= comment.created_at %></span>
+                </div>
+            </li>
+            <% end %>
+        </ul>
+      </div>
 
-  </ol>
-</div>
+
+  <!--     <form class="form-inline" role="form"> -->
+        <%= form_for(@comment) do |f| %>
+            <div class="form-group">
+              <input name="comment[link_id]" type="hidden" value="<%= @link.id %>">
+              <%= f.text_field :input, :placeholder => "Your comments", class: 'customdetailBox' %>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-default">Submit</button>
+            </div>
+        <% end %>
+<!--       </form> -->
+
+  </div> <!-- div for detail box -->
+</div> <!-- div for post -->
+
 
 
 <div class="post-centered">
