@@ -8,13 +8,13 @@
 
 <div class="post">
   <ul>
-    <% @links.each do |link| %>
+    <% @links.sort_by_score.each do |link| %>
       <%= form_for(@vote) do |f| %>
         <input name="vote[link_id]" type="hidden" value="<%= link.id %>">
         <input name="id" type="hidden" value="<%= link.id %>">
         <button type="submit" class="btn votearrow"></button>
           <a href="http://<%= link.link %>"><%= link.description %></a> |
-        <%= link.upvote_total %> votes
+        <%= link.link_score %> points
       <% end %>
     <% end %>
 

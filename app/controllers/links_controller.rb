@@ -2,6 +2,7 @@ class LinksController < ApplicationController
 
   def index
     @links = Link.all
+    # blah
     @vote = Vote.new
   end
 
