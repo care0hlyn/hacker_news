@@ -12,5 +12,3 @@ class VotesController < ApplicationController
   end
 end
 
-
-# Use incremental counter for votes?

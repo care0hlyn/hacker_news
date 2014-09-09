@@ -1,24 +1,24 @@
-<% content_for(:title, "Links | Hacker News") %>
 
 <div class="row">
-  <div class="col-md-6 col-md-offset-3 site">
+  <% content_for(:title, "Links | Hacker News") %>
+  <div class="col-md-10 col-md-offset-1 site">
     <div class="site-title">
-      <h2>Links Index:</h2>
+      <h2>Hacker News</h2>
     </div>
 
 <div class="post">
-  <ul>
+  <ol>
     <% @links.sort_by_score.each do |link| %>
       <%= form_for(@vote) do |f| %>
-        <input name="vote[link_id]" type="hidden" value="<%= link.id %>">
+        <li><input name="vote[link_id]" type="hidden" value="<%= link.id %>">
         <input name="id" type="hidden" value="<%= link.id %>">
         <button type="submit" class="btn votearrow"></button>
           <a href="http://<%= link.link %>"><%= link.description %></a> |
-        <%= link.link_score %> points
+        <%= link.link_score %> points | <a href="links/<%= link.id %>"> comments</a></li>
       <% end %>
     <% end %>
 
-  </ul>
+  </ol>
 </div>
 
 
