@@ -2,14 +2,14 @@ class VotesController < ApplicationController
 
   def create
     @link = Link.find(params[:id])
-    @vote = @link.vote.new
+    @vote = Vote.new(params[:vote])
     if @vote.save
       flash[:notice] = "Link upvoted!"
       redirect_to :back
     else
-      flash
+      flash[:alert] = ":("
+    end
   end
-
 end
 
 

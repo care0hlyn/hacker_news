@@ -9,10 +9,19 @@
 <div class="post">
   <ul>
     <% @links.each do |link| %>
-      <li><a href="http://<%= link.link %>"><%= link.description %></a></li>
+      <%= form_for(@vote) do |f| %>
+        <input name="vote[link_id]" type="hidden" value="<%= link.id %>">
+        <input name="id" type="hidden" value="<%= link.id %>">
+        <button type="submit" class="btn votearrow"></button>
+          <a href="http://<%= link.link %>"><%= link.description %></a> |
+        <%= link.upvote_total %> votes
       <% end %>
+    <% end %>
+
   </ul>
 </div>
+
+
 
 <div class="post-centered">
   <p><a href="links/new">+ Add Link</a></p>
