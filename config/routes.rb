@@ -3,4 +3,5 @@ Rails.application.routes.draw do
  resources :users
  resources :links
  resources :votes, :only => [:create]
+ resources :comments, :except => [:show]
 end

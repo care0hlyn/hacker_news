@@ -1,8 +1,23 @@
-<% content_for(:title, "Link Details | Hacker News") %>
 <div class="row">
-  <div class="col-md-6 col-md-offset-3 site">
+  <% content_for(:title, "Comments | Hacker News") %>
+  <div class="col-md-10 col-md-offset-1 site">
     <div class="post">
       <h3><a href="http://<%= @link.link %>"><%= @link.description %></a></h3>
-      <p>Points: <%= @link.link_score %></p>
-
+        <p>Points: <%= @link.link_score %></p>
     </div>
+
+
+
+<div class="post">
+  <ol>
+
+  </ol>
+</div>
+
+
+<div class="post-centered">
+  <p><a href="/links">+ Home</a></p>
+</div>
+
+ </div><!-- dive for col -->
+</div><!-- div for row -->

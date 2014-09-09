@@ -4,6 +4,7 @@ class Link < ActiveRecord::Base
 
   belongs_to :user
   has_many :votes
+  has_many :comments
 
   def self.sort_by_score
     self.all.sort { |a,b| a.link_score <=> b.link_score }.reverse
