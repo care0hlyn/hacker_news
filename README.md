@@ -1,6 +1,6 @@
 #Hacker News - Rails#
 
-#####[Hacker News] (http://bus-timetable-epicodus.herokuapp.com/) on Heroku
+#####[Hacker News] (http://hacker-news-epicodus.herokuapp.com/) on Heroku
 
 #####Written by [Justin Pacubas] (https://github.com/pac1687), [Carolyn Huynh] (https://github/care0hlyn), [Dustin Lewis] (https://github.com/dustinl)
 
